@@ -11,7 +11,8 @@ function drawLineColors() {
 
       data.addRows([
 <?php foreach (array_reverse($rows) as $row): ?>
-<?php echo "['{$row['datetime']}',{$row['value']}], \n"; ?>
+<?php $value = $row['value'] === NULL ? 'null' : $row['value']; ?>
+<?php echo "['{$row['datetime']}',{$value}], \n"; ?>
 <?php endforeach; ?>
       ]);
 
